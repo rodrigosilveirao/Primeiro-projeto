@@ -128,52 +128,66 @@ int main()
 {
 	int opcao=0; //Colocando variavel
 	int laco=1;
+	
+	char senha[10]="a";
+	int comparacao;
+	
+	printf("### Cartório EBAC ###\n\n");
+	printf("LOGIN CARTÓRIO EBAC!\n\n\nDigite sua senha:");
+	scanf("%s", senha);
+	
+	comparacao = strcmp(senha, "admin");
 
-	for(laco=1;laco=1;)
+	
+	if(comparacao == 0)
 	{
-		
-		system("cls");
 	
-		setlocale(LC_ALL, "Portuguese"); ///definindo linguagem para fucionar acentos
-	
-		printf("### Cartório EBAC ###\n\n" );
-		printf("Escolha a opção que deseja do menu:\n\n");
-		printf("\t1- Resgistrar nomes\n");
-		printf("\t2- Consultar nomes\n");
-		printf("\t3- Deletar nomes\n\n");
-		printf("\t4- Sair do progrma\n\n");
-		printf("Opção: "); 	//Fim
-		
-		scanf("%d" , &opcao); //Pausa para escolha de opcao
-		system("cls"); //Limpa a tela
-		
-		switch(opcao) //inicio da selecao de menu
+		for(laco=1;laco=1;)
 		{
-			case 1:		
-			registro(); //chamada de funcoes
-			break;
-			
-			case 2:	
-			consulta();
-			break;
-			
-			case 3:
-			deletar();
-			break;
-			
-			case 4:
-			printf("A equipe ****** agradece a preferência.");
-			return 0;
-			break;
-			
-			default:
-			printf("Escolha uma das opções apresentadas!\n"); //Precaucao de erro
-			system("pause");
-			break;	
-		}
+			system("cls");
 	
-	}	
-
+			setlocale(LC_ALL, "Portuguese"); ///definindo linguagem para fucionar acentos
+	
+			printf("### Cartório EBAC ###\n\n" );
+			printf("Escolha a opção que deseja do menu:\n\n");
+			printf("\t1- Resgistrar nomes\n");
+			printf("\t2- Consultar nomes\n");
+			printf("\t3- Deletar nomes\n\n");
+			printf("\t4- Sair do progrma\n\n");
+			printf("Opção: "); 	//Fim
+			
+			scanf("%d" , &opcao); //Pausa para escolha de opcao
+			system("cls"); //Limpa a tela
+			
+			switch(opcao) //inicio da selecao de menu
+			{
+				case 1:		
+				registro(); //chamada de funcoes
+				break;
+				
+				case 2:	
+				consulta();
+				break;
+				
+				case 3:
+				deletar();
+				break;
+				
+				case 4:
+				printf("A equipe ****** agradece a preferência.");
+				return 0;
+				break;
+				
+				default:
+				printf("Escolha uma das opções apresentadas!\n"); //Precaucao de erro
+				system("pause");
+				break;	
+			}
+		}
+	}
+	else	
+		printf("Senha incorreta!");
+			
 }
 
 
